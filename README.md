@@ -16,7 +16,6 @@ Given several dozen predictors/featues, we want to accurately predict the sale p
 - [Robust Regression - RANSAC](house-prices-robust-regression.ipynb)
 - [Stochastic Gradient Descent](house-prices-sgd.ipynb)
 - [Lasso, Ridge, and ElasticNet with log(target)](house-prices-lasso-ridge-log-target.ipynb)
-- [Outliers]
 - [Decision Tree and Random Forests](house-prices-decision-tree-and-random-forest.ipynb)
 - [GridSearchCV](house-prices-rf-gridsearchcv.ipynb)
 - [MLPRegressor](house-prices-mlpregressor.ipynb)
@@ -25,13 +24,7 @@ Given several dozen predictors/featues, we want to accurately predict the sale p
 - [Tensorflow](house-prices-tensorflow.ipynb)
 - [PyTorch](house-prices-pytorch.ipynb)
 - [Basic EDA](house-prices-eda.ipynb)
-
 - [Linear Regression from Scratch](house-prices-lr-from-scratch.ipynb)
-
-## Misc Notebooks
-
-- [DSML Feature Selection]
-
 
 ## Machine Learning Models Covered
 
