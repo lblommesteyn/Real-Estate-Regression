@@ -14,11 +14,6 @@ Given several dozen predictors/featues, we want to accurately predict the sale p
 - [Target and Feature Distributions](house-prices-target-feature-distributions.ipynb)
 - [Simple Imputer and Label Encoding](house-prices-simple-imputer.ipynb)
 - [Robust Regression - RANSAC](house-prices-robust-regression.ipynb)
-- [SelectK Best Features]
-- Variance Inflation Factor (VIF)
-- Recursive Feature Elimination (RFE)
-- Mutual Information Gain
-- [Forward Feature Selection]
 - [Stochastic Gradient Descent](house-prices-sgd.ipynb)
 - [Lasso, Ridge, and ElasticNet with log(target)](house-prices-lasso-ridge-log-target.ipynb)
 - [Outliers]
@@ -26,24 +21,11 @@ Given several dozen predictors/featues, we want to accurately predict the sale p
 - [GridSearchCV](house-prices-rf-gridsearchcv.ipynb)
 - [MLPRegressor](house-prices-mlpregressor.ipynb)
 - [Gradient Boosted Trees - XGBoost/Catboost/LightGBM](house-prices-xgboost.ipynb)
-- [GBDT Feature Importance]
-- [SHAP Values]
-- [XGBoost + CV with OOF Results]
-- [XGBoost + Optuna]
-- [Data Transformation]
 - [Support Vector Machines](house-prices-support-vector-regression.ipynb)
 - [Tensorflow](house-prices-tensorflow.ipynb)
-- [KerasTuner]
-- ***
-- [Target Encoding]
-- [Ensemble Learning - Blending]
-- [Ensemble Learning - Stacking]
-- [Robust Regression - RANSAC]
-- [Nonlinear Regression]
 - [PyTorch](house-prices-pytorch.ipynb)
 - [Basic EDA](house-prices-eda.ipynb)
-- [Enhanced EDA]
-- Feature Engineering
+
 - [Linear Regression from Scratch](house-prices-lr-from-scratch.ipynb)
 
 ## Misc Notebooks
@@ -71,7 +53,7 @@ Given several dozen predictors/featues, we want to accurately predict the sale p
 - Deep Neural Networks (DNN)
   - Activation Functions
 
-In addition, we will cover other topics important to machine learning:
+In addition, I use other topics important to machine learning:
 
 - Feature Engineering
   - Data Transformation
