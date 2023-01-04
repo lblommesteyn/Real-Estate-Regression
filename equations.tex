@@ -1,0 +1,250 @@
+\documentclass[fleqn,9pt]{article}
+
+%\documentclass[a4paper]{article}
+%
+% https://blmoistawinde.github.io/ml_equations_latex/
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{multicol}
+
+\usepackage{titling}
+\date{} % no date
+
+% https://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907057
+\usepackage[margin=0.1in]{geometry}
+
+%\geometry{
+%    margin=0.55in,
+%    top=0.35in,
+%    bottom=0.35in,
+%}
+ 
+\usepackage{tikz}
+\usetikzlibrary{
+    arrows,
+    arrows.meta,
+    positioning,
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1\baselineskip}
+\setlength{\mathindent}{0pt} % fleqn option needed
+
+% https://tex.stackexchange.com/questions/24561/setting-the-column-gap-in-a-twocolumn-or-multicol-document
+%\setlength{\columnsep}{3cm}
+
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+\title{Machine Learning Advanced Topics Group Formulas \vspace{-6em}}
+
+%\pagestyle{empty}
+
+\begin{document}
+\maketitle
+
+
+% Basic use of minipage environment
+
+%\noindent
+\begin{minipage}[t]{0.33\textwidth}
+
+\textbf{Linear Algebra}
+
+\begin{equation*}
+\begin{split}
+	A(B+C) = AB + AC\\
+	A(BC) = (AB)C \\
+	(AB)^T =B^TA^T\\
+	A^TA = AA^T = I \implies A^T = A^{-1}\\
+	x^Ty = y^Tx\\
+		x^Tx - inner\\
+	xx^T - outer\\
+\end{split}	
+\end{equation*}
+
+\begin{multline*}
+\Phi: V \to W \\
+\Phi(x+y) = \Phi(x) + \Phi(y)\; (2.85) \\
+	\Phi(\lambda x) =  \lambda \Phi(x)\\
+\forall x,y\in V, \forall \lambda, \psi \in \mathbb{R} : \Phi(\lambda x + \psi y) 
+\end{multline*}
+
+\begin{equation*}
+P_\pi=\frac{bb^T}{\|b\|^2} (3.46) \\
+\end{equation*}
+
+\begin{multline*}
+ker(\Phi) = \Phi^{-1}(0_W) 
+ = \{v\in V: \Phi(v) =0\} (2.122)\\
+Im(\Phi) = \Phi(V) 
+ =  \{w \in W | \exists v\in V: \Phi(v) = w \}\\
+\end{multline*}
+
+\begin{equation*}
+\begin{split}
+&\|x\|_1 := \sum_i^n |x_i| =\ell_1 \;(3.3)\\
+&\|x\|_2 := \sqrt{\sum_i^n x_i^2} = \sqrt{\textbf{x}^T \textbf{x}} =\ell_2 \;(3.4)\\
+&\forall x \in V\setminus\{0\}: x^TAx > 0\;(3.11)\\
+&\|x\| := \sqrt{\langle x,x\rangle}\;(3.16)\\
+&A = P D P^{-1}\;(4.55)\\
+&A^k =(P D P^{-1})^k = P D^k P^{-1}\;(4.62)\\
+&A = U\Sigma V^T\\
+\end{split}	
+\end{equation*}
+
+\textbf{Probability}
+%\begin{center}
+\begin{equation*}
+\begin{split}
+	p(x,y) = p(x)p(y) -  x \indep y\\
+	p(x|y) = p(x) -  x \indep y\\
+	\mathbb{V}_{X,Y} =  \mathbb{V}_X[x] + \mathbb{V}_Y[y] - x \indep y\\
+	Cov(x,y) = 0 - x \indep y\\
+% Product Rule (6.22) p184
+p(x,y) = p(y|x)p(x) - (6.22)\\
+p(x|y) = \frac{p(y|x)p(x)}{p(y)} - (6.23)\\
+Cov[x,y] = \mathbb{E}[xy]-\mathbb{E}[x]\mathbb{E}[y]\;(6.36)\\
+corr[x,y] = \frac{Cov[x,y]}{\sqrt{\mathbb{V}[x] \mathbb{V}[y]}}\;(6.40)\\
+X\sim \mathcal{N}(\mu,\sigma^2)\\
+X\sim \mathcal{N}(\mu, \boldsymbol{\Sigma^2})\\
+X \sim U(0, 1)\\
+\end{split}		
+\end{equation*}
+%\end{center}
+
+\end{minipage}% <---------------- Note the use of "%"
+\begin{minipage}[t]{0.33\textwidth}
+
+
+
+\textbf{Optimization}
+% Jensen's Inequality (7.30) p236
+\begin{equation*}
+	f(\theta x + (1-\theta)y) = \theta f(x) + (1-\theta)f(y)
+\end{equation*}
+
+\textbf{Linear Regression}
+
+\begin{equation*}
+\begin{split}
+	\hat{y} = \beta_0 + \beta_1 x_1 \cdots + \beta_n x_n \\
+	\boldsymbol{Y} = \boldsymbol{x}^T \boldsymbol{\beta} \\
+   \ell_{L1} = Error(Y - \widehat{Y}) + \lambda \sum_1^n |w_i|\\
+   \ell_{L2} = Error(Y - \widehat{Y}) +  \lambda \sum_1^n w_i^{2}\\
+\end{split}		
+\end{equation*}
+
+\textbf{Logistic Regression}
+
+\begin{equation*}
+odds = \frac{p(X)}{1-p(X)}
+\end{equation*}
+
+% ISLR (4.2))
+
+\begin{equation*}
+	\phi(x) = \frac{1}{1+e^{-x}}
+\end{equation*}
+
+
+\begin{equation*}
+	p(x) = \frac{e^{\beta_0 + \beta_1 x_1 \cdots + \beta_m x_p}}{1+e^{\beta_0 + \beta_1 x_1 \cdots + \beta_m x_p}}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+\text{BCE} =& -(y\,log(p)+(1-y)log(1-p))\\
+\text{MLE} =& \max_{\theta} \prod_y p(y;\theta)
+\end{split}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{split}
+&\text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN}\\
+&\text{Precision} = \frac{TP}{TP+FP}\\
+&\text{Recall} = \frac{TP}{TP+FN}\\
+&\text{Sensitivity} = Recall = \frac{TP}{TP+FN}\\
+&\text{Specificity} = \frac{TN}{FP+TN}\\
+&\text{F1} = \frac{2*Precision*Recall}{Precision+Recall} \\
+&]= \frac{2*TP}{2*TP+FP+FN}
+\end{split}
+\end{equation*}
+
+\end{minipage}% <---------------- Note the use of "%"
+\begin{minipage}[t]{.33333\textwidth}
+
+
+\textbf{Principal Components}
+\\\\
+
+\begin{equation*}
+	V_M = \sum_{m=1}^{M}\lambda_m \; (10.24)
+\end{equation*}
+
+\textbf{GMM}
+\begin{equation*}
+\begin{split}
+p(x|\theta) = \sum_{k=1}^K \pi_k \mathcal{N}(x|\mu_k,\Sigma_k)\; (11.3)\\
+0 \le \pi_k \le 1, \sum_{k=1}^K \pi_k = 1\;(11.4)
+\end{split}
+\end{equation*}
+
+\textbf{Support Vector Kernels}
+\\\\
+Kernel trick
+\\\\
+
+\begin{equation*}
+\text{hinge} = max(0, 1 - y \cdot \hat{y})
+\end{equation*}
+
+\textbf{Information Theory}
+
+% Negative entropy - Example 7.3 p237
+
+\begin{equation*}
+	f(x) = x\,log_2\,x
+\end{equation*}
+
+\textbf{Misc}
+
+\begin{equation*}
+	t = \frac{\bar{X} - \mu}{\frac{\hat{\sigma}}{\sqrt{n}}}
+\end{equation*}
+
+
+\begin{equation*}
+	\text{Gini} = \sum_{k=1}^{K}\hat{p}_{mk}(1-\hat{p}_{mk})
+\end{equation*}
+
+\begin{equation*}
+	\text{CE} = -\sum_{k=1}^{K}\hat{p}_{mk}\log _2 \hat{p}_{mk} ??
+\end{equation*}
+
+%
+
+\begin{equation*}
+KL(\hat{y} || y) = \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}}
+\end{equation*}
+
+\begin{equation*}
+cos(x,y) = \frac{x \cdot y}{|x||y|}
+\end{equation*}
+
+\textbf{Distributions}
+
+\begin{equation*}
+\begin{split}
+f(x) &= \frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{1}{2\sigma^2}(x-\mu)^2) \\
+\\
+f(\boldsymbol{x}) &= \frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} \exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^T \Sigma^{-1} (\boldsymbol{x}-\boldsymbol{\mu}) \\
+\end{split}
+\end{equation*}
+\end{minipage}
+
+
+\end{document}
